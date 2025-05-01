@@ -3,266 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Código da Atração - Técnicas de Persuasão</title>
+    <title>Página de Vendas Elegante - O Código da Atração</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
+        :root {
+            --primary-color: #AF2D2D; /* Red from cover */
+            --secondary-color: #e8491d; /* Accent orange/red for CTA */
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --white-color: #fff;
+            --grey-color: #ccc;
+            --font-family: 'Lato', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-            line-height: 1.6;
         }
-        
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.7;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 30px; /* Added horizontal padding */
         }
-        
+
         header {
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 20px 0;
             text-align: center;
-            padding: 40px 0;
-            background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+            border-bottom: 4px solid #772020;
         }
-        
-        .book-cover {
-            max-width: 300px;
-            margin: 0 auto 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            border: 5px solid white;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin: 0;
+
+        header h1 {
+            font-size: 2.8em;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
-        
-        h2 {
-            font-size: 1.5rem;
+
+        header p {
+            font-size: 1.3em;
             font-weight: 300;
-            margin-top: 10px;
-            margin-bottom: 20px;
         }
-        
-        .author {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-top: 20px;
-        }
-        
-        .content {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .cta-box {
-            background: #fff;
-            border: 2px solid #ff4d4d;
-            border-radius: 8px;
-            padding: 30px;
+         header .author {
+             font-size: 1.1em;
+             font-style: italic;
+             margin-top: 5px;
+             opacity: 0.9;
+         }
+
+        #showcase {
+            /* Use a high-quality background image related to attraction/connection */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('#hero-background-image-url') no-repeat center center/cover;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 40px;
+            color: var(--white-color);
+            padding: 40px 20px;
         }
-        
-        .price {
-            font-size: 2.5rem;
-            color: #ff1a1a;
+
+        #showcase h2 {
+            font-size: 3.2em;
+            margin-bottom: 15px;
             font-weight: 700;
-            margin: 20px 0;
+            max-width: 800px; /* Limit width for readability */
         }
-        
-        .old-price {
-            text-decoration: line-through;
-            color: #777;
-            font-size: 1.5rem;
+
+        #showcase p {
+            font-size: 1.6em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 700px;
         }
-        
-        .btn {
+
+        .cta-button {
             display: inline-block;
-            background: #ff1a1a;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            margin: 10px 0;
+            background: var(--secondary-color);
+            color: var(--white-color);
+            padding: 18px 35px;
+            font-size: 1.3em;
+            font-weight: 700;
             border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 26, 26, 0.4);
+            border-radius: 8px; /* Slightly more rounded */
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        
-        .btn:hover {
-            background: #e60000;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 26, 26, 0.6);
+
+        .cta-button:hover {
+            background: #f97326;
+            transform: translateY(-3px); /* Subtle lift effect */
         }
-        
-        .benefits {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 30px 0;
+
+        section {
+            padding: 60px 0; /* Increased padding */
+            background: var(--white-color);
+            margin-bottom: 20px; /* Space between sections */
+            border-bottom: 1px solid #e0e0e0;
         }
-        
-        .benefit {
-            flex-basis: 48%;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
+
+        section:last-of-type {
+             border-bottom: none;
         }
-        
-        .benefit-icon {
-            color: #ff1a1a;
-            font-size: 1.5rem;
-            margin-right: 15px;
-            margin-top: 3px;
-        }
-        
-        .testimonials {
-            margin: 40px 0;
-        }
-        
-        .testimonial {
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            text-align: right;
-            margin-top: 10px;
-            color: #555;
-        }
-        
-        .guarantee {
+
+        section h3 {
             text-align: center;
-            margin: 30px 0;
-            color: #555;
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 40px; /* More space below headings */
+            font-weight: 700;
         }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.2rem;
-            }
-            
-            .benefit {
-                flex-basis: 100%;
-            }
+
+         /* Style for sections with alternating backgrounds */
+        section.alternate-bg {
+             background-color: var(--light-color);
+         }
+
+        .section-content {
+             display: flex; /* Use Flexbox for layout */
+             gap: 30px; /* Space between items */
+             align-items: center; /* Align items vertically */
+             margin-bottom: 30px;
+         }
+
+         .section-content img {
+             max-width: 40%; /* Adjust image size */
+             height: auto;
+             border-radius: 8px;
+             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+         }
+
+         /* Reverse layout for alternating sections */
+         section.alternate-bg .section-content {
+             flex-direction: row-reverse;
+         }
+
+         .section-content .text-content {
+             flex: 1; /* Allow text to take remaining space */
+         }
+
+         /* Specific styling for the problem/challenges section */
+        #problema ul li {
+             background: #fdf0f0; /* Light red background */
+             margin-bottom: 12px;
+             padding: 15px 20px;
+             border-left: 5px solid var(--primary-color);
+             border-radius: 4px;
+             font-size: 1.1em;
+         }
+
+         /* Styling for the solution/features section */
+        #solucao ul li, #conteudo ul li {
+            background: #f9f9f9;
+             margin-bottom: 12px;
+             padding: 15px 20px;
+             border-left: 5px solid var(--secondary-color);
+             border-radius: 4px;
+             font-size: 1.1em;
+         }
+        #solucao ul li strong, #conteudo ul li strong {
+            color: var(--dark-color); /* Darker text for strong elements */
+            font-weight: 700;
         }
+
+         .highlight-box {
+             background: #fff9e6; /* Light yellow highlight */
+             padding: 25px;
+             border-radius: 5px;
+             margin: 30px 0;
+             border: 1px solid #ffeccc;
+             text-align: center;
+             font-size: 1.1em;
+         }
+
+        #autor .section-content img {
+             border-radius: 50%; /* Circular author photo */
+             max-width: 150px; /* Smaller author photo */
+         }
+
+        #comprar {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+        }
+         #comprar h3 {
+             color: var(--white-color);
+         }
+        #comprar p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+         #comprar .cta-button {
+             background-color: var(--white-color);
+             color: var(--primary-color);
+             font-size: 1.4em;
+             padding: 20px 40px;
+         }
+         #comprar .cta-button:hover {
+             background-color: #f0f0f0;
+         }
+        #comprar small {
+            display: block;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 0; /* Remove top margin */
+        }
+        footer p {
+             opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+             header h1 { font-size: 2.2em; }
+             #showcase h2 { font-size: 2.5em; }
+             #showcase p { font-size: 1.3em; }
+             section h3 { font-size: 1.8em; }
+
+            .section-content {
+                 flex-direction: column !important; /* Stack vertically on smaller screens */
+                 text-align: center;
+             }
+             .section-content img {
+                 max-width: 70%; /* Allow image to be larger */
+                 margin-bottom: 20px;
+             }
+            #autor .section-content img {
+                 max-width: 120px;
+             }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://raw.githubusercontent.com/carlos46743/O-C-digo-da-Atra-o-/a849b427b8fa14db0cdd2410fe98262e47006cc2/Capa%20de%20livro%20de%20ansiedade%20vermelho%20e%20branco%20simples_20250501_112057_0000.jpg" alt="Capa do livro O Código da Atração" class="book-cover">
-            <h1>O Código da Atração</h1>
-            <h2>Técnicas de Persuasão para Homens que Querem Resultados</h2>
-            <div class="author">Autor: Carlos Augusto</div>
-        </header>
-        
-        <div class="content">
-            <h3>Descubra o Sistema Comprovado para Criar Atração Genuína</h3>
-            <p>Depois de anos estudando psicologia social e comportamento humano, Carlos Augusto revela neste ebook as técnicas mais poderosas de persuasão e atração, todas baseadas em pesquisas científicas e testadas na prática.</p>
-            
-            <div class="benefits">
-                <div class="benefit">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4>Persuasão Ética</h4>
-                        <p>Aprenda a criar conexões genuínas sem manipulação ou jogos emocionais</p>
-                    </div>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4>Linguagem Corporal</h4>
-                        <p>Domine os sinais não-verbais que geram atração instantânea</p>
-                    </div>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4>Comunicação Poderosa</h4>
-                        <p>Técnicas para manter conversas cativantes e memoráveis</p>
-                    </div>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">✓</div>
-                    <div>
-                        <h4>Conexão Emocional</h4>
-                        <p>Como criar intimidade rapidamente com vulnerabilidade estratégica</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonials">
-                <h3>O Que Dizem Nossos Leitores</h3>
-                
-                <div class="testimonial">
-                    <p>"Depois de aplicar as técnicas do livro, minha confiança aumentou drasticamente. Finalmente entendi como criar atração de forma natural."</p>
-                    <div class="testimonial-author">- Marcelo R., 29 anos</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p>"O diferencial deste livro é a abordagem ética. Não são truques baratos, mas sim princípios profundos de comunicação e psicologia."</p>
-                    <div class="testimonial-author">- Ricardo T., 34 anos</div>
-                </div>
+    <header>
+        <div class="container">
+            <h1>O CÓDIGO DA ATRAÇÃO</h1>
+            <p>Técnicas de Persuasão para Homens que Querem Resultados Reais</p>
+            <p class="author">Por Carlos Augusta</p>
+        </div>
+    </header>
 
-                <div class="testimonial">
-                    <p>"Mudou minha forma de enxergar as relações. Hoje converso com mais segurança e entendo melhor as emoções das mulheres."</p>
-                    <div class="testimonial-author">- João P., 26 anos</div>
-                </div>
+    <section id="showcase">
+        <div class="container">
+            <h2>Cansado da Frustração e da Falta de Resultados na Conquista?</h2>
+            <p>Descubra o método passo a passo, baseado em persuasão ética, para criar conexões genuínas, despertar atração natural e se tornar o homem que as mulheres admiram.</p>
+            <a href="#comprar" class="cta-button">DESTRAVAR MEU POTENCIAL AGORA!</a>
+        </div>
+    </section>
 
-                <div class="testimonial">
-                    <p>"Esse livro deveria ser leitura obrigatória. Finalmente encontrei um guia prático, direto e honesto para me desenvolver como homem."</p>
-                    <div class="testimonial-author">- Thiago A., 32 anos</div>
-                </div>
+     <section id="introduction">
+         <div class="container section-content">
+             <img src="#ebook-cover-url" alt="Capa do Ebook O Código da Atração">
+             <div class="text-content">
+                 <h3>Chega de Tentativa e Erro. É Hora de Estratégia.</h3>
+                 <p>Quantas vezes você se sentiu invisível, incompreendido ou preso na "friendzone"? A verdade é que a atração não é sorte, é habilidade. "O Código da Atração" não oferece truques baratos, mas sim um profundo entendimento da psicologia feminina e masculina, ensinando técnicas de comunicação e conexão que funcionam de verdade, de forma ética e autêntica.</p>
+                 <p>Imagine ter a confiança para abordar, a habilidade para conversar e a inteligência emocional para criar vínculos duradouros. Este ebook é o seu mapa.</p>
+             </div>
+         </div>
+     </section>
 
-                <div class="testimonial">
-                    <p>"Senti que estava sempre sendo rejeitado por não entender o jogo. Agora eu entendo que se trata de conexão, não de manipulação."</p>
-                    <div class="testimonial-author">- Felipe M., 28 anos</div>
-                </div>
+    <section id="problema" class="alternate-bg">
+        <div class="container">
+            <h3>Você se Reconhece Nestes Desafios?</h3>
+             <ul>
+                <li>Sente que suas qualidades são ignoradas e acaba sempre como "apenas um amigo"? [cite: 18]</li>
+                <li>Trava na hora de iniciar uma conversa ou fica sem assunto rapidamente? [cite: 168, 185]</li>
+                <li>Acredita que precisa ostentar ou mentir para gerar interesse? [cite: 9, 35]</li>
+                <li>O nervosismo toma conta e impede você de mostrar quem realmente é? [cite: 94, 146]</li>
+                <li>Tem dificuldade em ler os sinais e perde o momento certo de avançar? [cite: 233, 241]</li>
+                <li>Teme parecer manipulador ao tentar ser mais assertivo na conquista? [cite: 9, 31]</li>
+            </ul>
+            <div class="highlight-box">
+            <p>Essas dificuldades são comuns, mas superáveis. O problema raramente está em quem você é, mas em como você comunica seu valor. Este ebook te dará as ferramentas para mudar isso.</p>
             </div>
         </div>
-        
-        <div class="cta-box">
-            <h3>Comece Sua Transformação Hoje Mesmo</h3>
-            <div class="price">R$47,00</div>
-            <div class="old-price">De R$97,00</div>
-            <a href="#comprar" class="btn">COMPRAR AGORA</a>
-            <p>Pagamento seguro via cartão, Pix ou boleto</p>
+    </section>
+
+    <section id="solucao">
+        <div class="container">
+            <h3>O Que "O Código da Atração" Fará Por Você:</h3>
+             <p>Este não é apenas um livro, é um treinamento completo para transformar sua vida social e amorosa:</p>
+            <ul>
+                <li><strong><span style="color: var(--primary-color);">✓</span> Domine a Persuasão Ética:</strong> Entenda a diferença crucial entre influenciar positivamente e manipular, construindo atração sobre bases sólidas e respeito mútuo. [cite: 6, 10, 15]</li>
+                <li><strong><span style="color: var(--primary-color);">✓</span> Desenvolva Autoconfiança Inabalável:</strong> Descubra suas forças ocultas, supere inseguranças e projete uma segurança genuína que atrai naturalmente. [cite: 84, 109, 114]</li>
+                <li><strong><span style="color: var(--primary-color);">✓</span> Comunique-se Como um Mestre:</strong> Aprenda os segredos da linguagem corporal magnética[cite: 143], do olhar que conecta [cite: 153] e da conversa que flui sem esforço. [cite: 168, 185]</li>
+                 <li><strong><span style="color: var(--primary-color);">✓</span> Crie Conexões Profundas e Rápidas:</strong> Utilize técnicas de escuta ativa[cite: 198], humor inteligente [cite: 223] e vulnerabilidade estratégica [cite: 273] para ir além da superfície.</li>
+                <li><strong><span style="color: var(--primary-color);">✓</span> Decifre os Sinais da Atração:</strong> Saiba identificar o interesse real[cite: 233], o timing perfeito para cada passo[cite: 241], e como planejar encontros que deixam uma marca positiva. [cite: 259]</li>
+                <li><strong><span style="color: var(--primary-color);">✓</span> Mantenha a Chama Acesa:</strong> Descubra como evitar a rotina e continuar nutrindo a atração e a conexão em relacionamentos. [cite: 281]</li>
+            </ul>
         </div>
-        
-        <div class="guarantee">
-            <h4>✅ Garantia de 7 Dias</h4>
-            <p>Se não gostar do conteúdo, devolvemos seu dinheiro sem perguntas.</p>
+    </section>
+
+    <section id="conteudo" class="alternate-bg">
+         <div class="container">
+             <h3>Uma Jornada Completa - Do Básico ao Avançado:</h3>
+              <p>Veja a estrutura progressiva que te guiará passo a passo:</p>
+             <ul>
+                 <li><strong>Fundamentos Essenciais:</strong> A psicologia por trás da atração, o poder da persuasão ética, autoconhecimento e como construir uma confiança real. [cite: 2]</li>
+                 <li><strong>Comunicação Não-Verbal Poderosa:</strong> Linguagem corporal de impacto, o uso estratégico do olhar e a importância da aparência cuidada. [cite: 2]</li>
+                 <li><strong>Maestria na Conversa:</strong> Como iniciar, manter e aprofundar diálogos, usando escuta ativa e humor na medida certa. [cite: 3]</li>
+                 <li><strong>Criando Vínculos Reais:</strong> Técnicas para conexão emocional rápida, elogios que funcionam, identificação de interesse e o timing correto para agir. [cite: 3]</li>
+                 <li><strong>Da Conquista ao Relacionamento:</strong> Planejando encontros memoráveis, mantendo o interesse, lidando com jogos emocionais e o equilíbrio entre desejo e respeito. [cite: 4, 288]</li>
+                 <li><strong>Ferramentas Práticas (Bônus):</strong> Checklists, frases adaptáveis e exercícios para aplicar o conhecimento no dia a dia. [cite: 4]</li>
+             </ul>
+         </div>
+     </section>
+
+    <section id="autor">
+         <div class="container section-content">
+             <img src="#author-photo-url" alt="Foto de Carlos Augusta">
+             <div class="text-content">
+                 <h3>Conheça Seu Mentor: Carlos Augusta</h3>
+                 <p>Com vasta experiência em desenvolvimento pessoal e dinâmicas sociais, Carlos Augusta criou "O Código da Atração" como um guia prático e ético para homens que buscam não apenas conquistar, mas construir relacionamentos saudáveis e satisfatórios. Seu foco está em resultados sustentáveis, baseados em autenticidade e respeito mútuo.</p>
+                 <p>Acompanhe mais dicas e conteúdos em: <strong>@c.a.r.l.o.s_a.u.g.u.s.t.o</strong> [cite: 300]</p>
+             </div>
+         </div>
+     </section>
+
+    <section id="comprar">
+        <div class="container">
+            <h3>Pronto Para Reescrever Sua História?</h3>
+            <p>Chega de se contentar com menos do que você merece. Invista no seu desenvolvimento pessoal e desbloqueie o potencial de atração que existe em você.</p>
+            <p><strong>Adquira AGORA seu acesso a "O Código da Atração" e comece a ver resultados HOJE!</strong></p>
+            <a href="#" class="cta-button">QUERO MEU EBOOK POR R$XX,XX</a>
+             <p><small>(Substitua R$XX,XX pelo preço real e link de compra)</small></p>
+             <p><small>✅ Compra 100% Segura | ✅ Acesso Imediato | ✅ Conteúdo Transformador</small></p>
+             </div>
+    </section>
+
+    <footer>
+        <div class="container">
+             <p>O Código da Atração | Desenvolvido por Carlos Augusta &copy; 2025</p>
+             <p><small>Todos os direitos reservados. Este material é protegido por leis de direitos autorais.</small></p>
+             <p><small>Nota: As imagens nesta página são ilustrativas. Os resultados individuais podem variar.</small></p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
